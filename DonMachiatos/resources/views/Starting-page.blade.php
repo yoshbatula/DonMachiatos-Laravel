@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+        <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -18,7 +18,8 @@
     </head>
     <body>
          <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
-              <button class="hover:cursor-pointer">
+              <a href={{ Route('ordertype') }}>
+                <button class="hover:cursor-pointer">
                 <h1 class="text-black py-20 text-[48px] font-bold">ORDER AND PAY HERE</h1>
                 <div class="mt-10 flex flex-row items-center w-[1080px] px-20">
                     {{-- Don Machos Logo --}}
@@ -46,6 +47,7 @@
                     <h1 class="text-white text-[48px] font-bold">TAP ANYWHERE TO BEGIN</h1>
                 </div>
               </button>
+              </a>
          </div>
     </body>
 </html>
