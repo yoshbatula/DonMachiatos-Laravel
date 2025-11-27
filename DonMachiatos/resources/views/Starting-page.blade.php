@@ -19,27 +19,30 @@
     <body>
          <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
               <button class="hover:cursor-pointer">
-                <h1 class="text-black py-17 text-[48px] font-bold">ORDER AND PAY HERE</h1>
-                <div class="flex flex-row justify-between items-center">
+                <h1 class="text-black py-20 text-[48px] font-bold">ORDER AND PAY HERE</h1>
+                <div class="mt-10 flex flex-row items-center w-[1080px] px-20">
                     {{-- Don Machos Logo --}}
-                    <div class="mt-30">
-                        <img src="{{ Vite::asset('resources/images/DonMachos-Logo.png') }}" alt="DonMachos Logo">
-                        <h1 class="text-[26px] font-medium text-left">WELCOME TO DON MACHOS</h1>
-                        <div class="mt-20 flex flex-col text-left">
+                    <div class="max-w-sm transform translate-x-20">
+                        <div class="transform translate-y-[150px]">
+                            <img class="w-auto h-auto" src="{{ Vite::asset('resources/images/DonMachos-Logo.png') }}" alt="DonMachos Logo">
+                            <h1 class="text-[26px] font-medium text-left mb-8">WELCOME TO DON MACHOS</h1>
+                        </div>
+                        
+                        <div class="mb-5 flex flex-col text-left transform -translate-y-[-150px] space-y-1">
                             <h1 class="text-[60px] font-bold leading-tight">Your Cup of</h1>
                             <h1 class="text-[60px] font-bold leading-tight">Happiness</h1>
                         </div>
-                        <div class="mt-5 flex flex-col text-left">
+                        <div class="flex flex-col text-left space-y-1 transform -translate-y-[-160px]">
                             <p class="text-[20px] leading-snug">THE PERFECT CUP, THE PERFECT VIBE.</p>
                             <p class="text-[20px] leading-snug">COME EXPERIENCE THE DON MACHOS COMMUNITY.</p>
                         </div>
                     </div>
                     {{-- Hand Logo --}}
-                    <div class="transform translate-x-26.5 translate-y-[-70px]">
-                        <img src="{{ Vite::asset('resources/images/Hand.png') }}" alt="Hand Logo">
+                    <div class="shrink-0 -translate-y-[10px]">
+                        <img class="w-auto h-auto" src="{{ Vite::asset('resources/images/Hand.png') }}" alt="Hand Logo">
                     </div>
                 </div>
-                <div class=" mt-10 bg-black flex flex-row text-center justify-center h-40 items-center">
+                <div class="mt-85  bg-black flex flex-row text-center justify-center h-40 items-center w-[1080px]">
                     <h1 class="text-white text-[48px] font-bold">TAP ANYWHERE TO BEGIN</h1>
                 </div>
               </button>
