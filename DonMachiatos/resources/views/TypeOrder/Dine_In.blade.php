@@ -6,6 +6,7 @@
         <title>Don Machos</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" href="{{ Vite::asset('resources/images/DonMachos-Logo1.svg') }}" type="image/svg+xml">
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -16,7 +17,7 @@
             </style>
         @endif
     </head>
-    <body>
+    <body class="bg-[#F4F4F4]">
         {{-- Header --}}
          <x-header />
 
@@ -25,6 +26,6 @@
         </div>
 
         {{-- Menu --}}
-        <x-menu />
+        <x-Menu />
     </body>
 </html>
