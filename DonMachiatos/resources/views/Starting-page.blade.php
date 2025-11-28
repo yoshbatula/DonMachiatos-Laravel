@@ -17,9 +17,8 @@
         @endif
     </head>
     <body>
-         <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
-              <a href={{ Route('ordertype') }}>
-                <button class="hover:cursor-pointer">
+            <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
+                <button class="hover:cursor-pointer" hx-get="{{ route('dinein') }}" hx-trigger="click" hx-target="body" hx-swap="outerHTML" hx-push-url="true">
                 <h1 class="text-black py-20 text-[48px] font-bold">ORDER AND PAY HERE</h1>
                 <div class="mt-10 flex flex-row items-center w-[1080px] px-20">
                     {{-- Don Machos Logo --}}
@@ -47,7 +46,6 @@
                     <h1 class="text-white text-[48px] font-bold">TAP ANYWHERE TO BEGIN</h1>
                 </div>
               </button>
-              </a>
          </div>
     </body>
 </html>
