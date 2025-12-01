@@ -18,14 +18,21 @@
         @endif
     </head>
     <body class="bg-[#F4F4F4]">
-        {{-- Header --}}
-         <x-header />
+        <div>
+            {{-- Header --}}
+            <x-header />
 
-        <div class="mt-12 px-[50px] grid grid-cols-2">
-            <h1 class="font-bold text-[37px] self-center">DON MACHOS MENU</h1>
+            <div class="mt-12 px-[50px]">
+                <h1 class="font-bold text-[37px]">DON MACHOS MENU</h1>
+            </div>
+
+            <div class="flex flex-row">
+                {{-- Menu --}}
+                <x-Menu />
+
+                {{-- Order Details --}}
+                <x-Order-Details />
+            </div>
         </div>
-
-        {{-- Menu --}}
-        <x-Menu />
     </body>
 </html>
