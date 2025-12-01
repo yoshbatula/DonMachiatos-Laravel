@@ -35,7 +35,18 @@
     {{-- Menu Selection --}}
     <div class="flex flex-col bg-white rounded-[40px] h-180 w-131 shadow-md translate-x-[70px] translate-y-[20px] p-6 overflow-hidden relative">
         {{-- Menu Items Cards --}}
-        <div class="grid grid-cols-2 gap-x-5 gap-y-3 overflow-y-scroll transform translate-x-[-6px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex-1">
+        <div class="grid grid-cols-2 gap-x-5 gap-y-3 overflow-y-scroll transform translate-x-[-6px] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex-1 content-start">
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
           <button class="hover:cursor-pointer">
                 <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
                     <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
