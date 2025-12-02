@@ -1,6 +1,7 @@
-<div class="flex flex-row gap-2">
+<div class="flex flex-col gap-2">
 {{-- Menu Navigation --}}
-    <div class="mt-5 grid grid-cols-1 bg-white rounded-[40px] shadow-md h-180 w-50 transform translate-x-[50px] overflow-hidden">
+    <div class="flex flex-row">
+        <div class="mt-5 grid grid-cols-1 bg-white rounded-[40px] shadow-md h-180 w-50 transform translate-x-[50px] overflow-hidden">
         <div class="flex flex-col text-center gap-y-2">
             <div class="mt-8 px-[50px]">
                 <h1 class="font-bold text-[24px]">Menu</h1>
@@ -63,4 +64,5 @@
         <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 pointer-events-none">
             <img class="w-6" src={{ Vite::asset('resources/images/ArrowDown.svg') }} alt="Scroll Indicator">
         </div>
-    </div>
+    </div>    
+</div>

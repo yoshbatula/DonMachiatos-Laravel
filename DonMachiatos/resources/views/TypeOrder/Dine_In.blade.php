@@ -26,15 +26,13 @@
                 <h1 class="font-bold text-[37px]">DON MACHOS MENU</h1>
             </div>
 
-            <div class="flex flex-col">
-                {{-- Menu --}}
-                <x-Menu />
+            {{-- Menu --}}
+            <x-Menu />
 
-                {{-- Order Details --}}
-                <div>
-                    <x-Order-Details />
-                </div>
-            </div>
+            {{-- Order Details --}}
+            <x-Order-Details />
+
+            {{--  --}}
         </div>
     </body>
 </html>
