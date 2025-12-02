@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -18,8 +21,8 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#F4F4F4]">
-        <div>
+    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, quantity: 1 }">
+        <div class="min-h-screen bg-[#F4F4F4]">
             {{-- Header --}}
             <x-header />
 
