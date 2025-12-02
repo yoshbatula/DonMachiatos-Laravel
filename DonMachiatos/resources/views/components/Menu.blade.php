@@ -59,6 +59,72 @@
                     </div>
                 </div>
           </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
+          <button class="hover:cursor-pointer">
+                <div class="flex flex-row bg-[#F4F4F4] rounded-[40px] h-52 w-60 p-3">
+                    <img src={{ Vite::asset('resources/images/Coffee.svg') }} alt="Coffee Image"
+                    class="w-28 h-auto object-contain -ml-2 mr-2"/>
+                    <div class="flex flex-col justify-center text-start -ml-3 flex-1 min-w-0">
+                        <h1 class="font-bold text-[17px] leading-tight">CARAMEL MACCHIATOS</h1>
+                        <span class="text-[#929292] text-[12px] leading-tight mt-1">Chilled milk, espresso, and caramel syrup.</span>
+                        <span class="text-[24px] font-bold mt-1">₱39</span>
+                    </div>
+                </div>
+          </button>
           
         </div>
         <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 pointer-events-none">
