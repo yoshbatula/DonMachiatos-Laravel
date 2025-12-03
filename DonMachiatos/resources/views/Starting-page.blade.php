@@ -19,7 +19,7 @@
                 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
             </style>
         @endif
-    </head>
+    </head>                               
     <body>
             <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
                 <button class="hover:cursor-pointer" hx-get="{{ route('dinein') }}" hx-trigger="click" hx-target="body" hx-swap="outerHTML" hx-push-url="true">
