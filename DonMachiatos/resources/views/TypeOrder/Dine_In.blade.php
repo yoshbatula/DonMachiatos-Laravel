@@ -22,7 +22,7 @@
         @endif
     </head>
     <body class="bg-[#F4F4F4]" x-data="{ showModal: false, quantity: 1 }">
-        <div class="min-h-screen bg-[#F4F4F4]">
+        <div id="main-content" class="min-h-screen bg-[#F4F4F4]">
             {{-- Header --}}
             <x-header />
 

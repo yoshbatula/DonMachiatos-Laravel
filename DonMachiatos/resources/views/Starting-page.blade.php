@@ -20,9 +20,9 @@
             </style>
         @endif
     </head>                               
-    <body>
+    <body x-data="{ showModal: false, quantity: 1 }">
             <div class="flex items-center justify-center bg-[#F4F4F4] overflow-hidden">
-                <button class="hover:cursor-pointer" hx-get="{{ route('dinein') }}" hx-trigger="click" hx-target="body" hx-swap="outerHTML" hx-push-url="true">
+                <button class="hover:cursor-pointer" hx-get="{{ route('dinein') }}" hx-trigger="click" hx-target="body" hx-swap="innerHTML" hx-push-url="true">
                 <h1 class="text-black py-20 text-[48px] font-bold">ORDER AND PAY HERE</h1>
                 <div class="mt-10 flex flex-row items-center w-[1080px] px-20">
                     {{-- Don Machos Logo --}}

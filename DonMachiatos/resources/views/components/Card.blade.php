@@ -20,7 +20,7 @@
             </div>
             <div class="flex flex-row justify-between items-start">
                 <div class="mt-4 flex flex-col">
-                    <h1 class="text-[24px] font-bold">Mood</h1>
+                    <h1 class="text-[24px] font-bold">Mood</h1> 
                     <div class="flex flex-row gap-2">
                         <div class="mt-2 bg-[#D9D9D9] rounded-[40px] w-13 h-10 flex items-center justify-center">
                             <button class="hover:cursor-pointer"><img src={{ Vite::asset('resources/images/FireLogo.svg') }} alt="Fire Logo"></button>
@@ -67,7 +67,7 @@
                     <h1 class="text-[24px] font-bold">Quantity</h1>
                     <div class="mt-2 bg-[#D9D9D9] rounded-[40px] w-28 h-10 flex flex-row items-center justify-between px-3">
                         <button @click="if(quantity > 1) quantity--" class="hover:cursor-pointer font-bold text-[20px] text-gray-600 hover:text-black">-</button>
-                        <input type="number" x-model="quantity" class="bg-transparent w-10 text-center outline-none font-semibold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" min="1">
+                        <span x-text="quantity" class="font-semibold text-[16px] w-10 text-center"></span>
                         <button @click="quantity++" class="hover:cursor-pointer font-bold text-[20px] text-gray-600 hover:text-black">+</button>
                     </div>
                 </div>
