@@ -2,7 +2,7 @@
     <div class="bg-white w-187 h-60 rounded-[40px] shadow-md">
         <div class="flex flex-row justify-between items-center justify-items-center p-5">
             <h1 class="text-[24px] font-medium">YOUR ORDER</h1>
-            <button class="bg-black text-white rounded-[40px] w-37 h-9">VIEW CART</button>
+            <button class="bg-black text-white rounded-[40px] w-37 h-9 hover:cursor-pointer">VIEW CART</button>
         </div>
         <div class="w-full border-t border-gray-300"></div>
         <div class="overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] h-32">
