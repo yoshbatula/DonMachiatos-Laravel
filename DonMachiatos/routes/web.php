@@ -21,3 +21,7 @@ Route::get('/Takeaway', function () {
 Route::get('/PaymentOptions', function () {
     return view('PaymentGateway/PaymentOption');
 })->name('paymentoptions');
+
+Route::get('/QrScanner', function () {
+    return view('PaymentGateway/QrScanner');
+})->name('qrscanner');

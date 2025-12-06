@@ -23,22 +23,13 @@
             <x-header/>
 
             <div class="flex flex-col h-[70vh] flex flex-col justify-center items-center">
-                <div>
-                    <h1 class="text-[40px] font-bold">SELECT YOUR PAYMENT OPTION</h1>
-                </div>
-
                 <div class="flex flex-row mt-9 gap-5">
-                    <div class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer"
-                    hx-get="{{ route('qrscanner') }}" 
-                    hx-trigger="click" 
-                    hx-target="body" 
-                    hx-swap="innerHTML" 
-                    hx-push-url="true">
-                        <img src={{ Vite::asset('resources/images/InstaPay.svg') }} alt="Cash Icon">
+                    <div class="bg-white w-150 h-130 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer">
+                        <img src={{ Vite::asset('resources/images/Qr.svg') }} alt="Cash Icon" class="w-130">
                     </div>
-                    <div class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer">
-                        <h1 class="text-[40px] font-bold">Cashier</h1>
-                    </div>
+                </div>
+                <div class="mt-9">
+                    <h1 class="text-[40px] font-bold">Scan the QR code to make your payment</h1>
                 </div>
             </div>
     </body>
