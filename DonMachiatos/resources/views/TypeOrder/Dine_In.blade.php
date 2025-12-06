@@ -39,10 +39,15 @@
             {{-- Buttons --}}
             <div class="mt-3 flex flex-row gap-6 transform translate-x-[60px]">
                 <div class="bg-white border border-black w-50 h-20 flex items-center justify-center rounded-2xl hover:bg-black hover:text-white transition-colors duration-300">
-                    <button class="text-[20px] font-bold hover:cursor-pointer" onclick="">CANCEL</button>
+                    <button class="text-[20px] font-bold hover:cursor-pointer">CANCEL</button>
                 </div>
-                <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl">
-                    <button class="font-bold text-[20px] hover:cursor-pointer">PROCEED TO CHECKOUT</button>
+                <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer"
+                    hx-get="{{ route('paymentoptions') }}" 
+                    hx-trigger="click" 
+                    hx-target="body" 
+                    hx-swap="innerHTML" 
+                    hx-push-url="true">
+                    <span class="font-bold text-[20px]">PROCEED TO CHECKOUT</span>
                 </div>
                 <div class="bg-white border border-black flex flex-col w-50 h-20 items-center justify-center rounded-2xl">
                     <p class="font-medium text-[14px]">ORDER TOTAL</p>

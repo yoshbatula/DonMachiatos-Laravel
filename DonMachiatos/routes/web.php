@@ -17,3 +17,7 @@ Route::get('/Dine-In', function () {
 Route::get('/Takeaway', function () {
     return view('TypeOrder/TakeOut');
 })->name('takeout');
+
+Route::get('/PaymentOptions', function () {
+    return view('PaymentGateway/PaymentOption');
+})->name('paymentoptions');
