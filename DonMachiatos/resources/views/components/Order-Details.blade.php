@@ -46,6 +46,4 @@
             <img src={{ Vite::asset('resources/images/ArrowDown.svg') }} alt="Arrow Down" class="w-5">
         </div>
     </div>
-    {{-- initial commit --}}
-    {{-- initial --}}
 </div>
