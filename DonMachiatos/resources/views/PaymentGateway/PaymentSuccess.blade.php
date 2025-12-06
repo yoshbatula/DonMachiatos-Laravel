@@ -22,19 +22,21 @@
             {{-- Header --}}
             <x-header/>
 
-            <div class="flex flex-col h-[70vh] flex flex-col justify-center items-center">
-                <div class="flex flex-row mt-9 gap-5">
-                    <div class="bg-white w-150 h-130 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer"
-                    hx-get="{{ route('paymentsuccess') }}" 
-                    hx-trigger="click" 
-                    hx-target="body" 
-                    hx-swap="innerHTML" 
-                    hx-push-url="true">
-                        <img src={{ Vite::asset('resources/images/Qr.svg') }} alt="Cash Icon" class="w-130">
+            <div class="flex flex-col h-[80vh] flex flex-col justify-center items-center">
+                <div>
+                    <h1 class="text-[40px] font-bold">Your order was successful.</h1>
+                </div>
+                <div class="bg-white mt-9 w-140 h-60 rounded-2xl shadow-2xl flex justify-center items-center">
+                    <div>
+                        <p class="text-[48px] font-extrabold">Your order number:</p>
+                        <h1 class="text-[80px] font-extrabold text-center">#0069</h1>
                     </div>
                 </div>
-                <div class="mt-9">
-                    <h1 class="text-[40px] font-bold">Scan the QR code to make your payment</h1>
+                <div class="mt-5">
+                    <p class="text-[28px] font-medium">Please get your receipt and present it to the cashier</p>
+                </div>
+                <div class="mt-9 bg-black hover:bg-white hover:text-black transition-colors duration-300 text-white w-70 h-20 flex items-center justify-center rounded-2xl shadow-2xl">
+                    <span class="text-[30px] font-bold hover:cursor-pointer">BackToMenu</span>
                 </div>
             </div>
     </body>

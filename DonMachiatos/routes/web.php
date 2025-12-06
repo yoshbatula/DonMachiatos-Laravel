@@ -25,3 +25,7 @@ Route::get('/PaymentOptions', function () {
 Route::get('/QrScanner', function () {
     return view('PaymentGateway/QrScanner');
 })->name('qrscanner');
+
+Route::get('/PaymentSucess', function () {
+    return view('PaymentGateway/PaymentSuccess');
+})->name('paymentsuccess');
