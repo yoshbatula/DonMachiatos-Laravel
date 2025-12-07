@@ -59,5 +59,5 @@
     </div>    
 
     {{-- Modal --}}
-    <x-Card />
+    <x-Card :products  />
 </div>
