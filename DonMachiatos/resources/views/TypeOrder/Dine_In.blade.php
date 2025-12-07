@@ -31,7 +31,7 @@
             </div>
 
             {{-- Menu --}}
-            <x-Menu />
+            <x-Menu :products="$products" />
 
             {{-- Order Details --}}
             <x-Order-Details />

@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsControllers\ProductCont;
 
 Route::get('/', function () {
     return view('Starting-page');
@@ -10,9 +12,7 @@ Route::get('/order-type', function () {
     return view('TypeOrder/OrderType');
 })->name('ordertype'); 
 
-Route::get('/Dine-In', function () {
-    return view('TypeOrder/Dine_In');
-})->name('dinein');
+Route::get('/Dine-In', [ProductCont::class, 'index'])->name('dinein');
 
 Route::get('/Takeaway', function () {
     return view('TypeOrder/TakeOut');
@@ -34,3 +34,6 @@ Route::get('/PaymentSucess', function () {
 Route::get('/Payment', function () {
     return view('PaymentGateway/Payment');
 })->name('payment');
+
+Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.list');
+Route::post('/Products/add', [ProductCont::class, 'addProducts'])->name('products.add');
