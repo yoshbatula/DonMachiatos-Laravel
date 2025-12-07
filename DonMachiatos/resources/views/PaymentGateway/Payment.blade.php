@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Don Machos</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @else
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+            </style>
+        @endif
+    </head>                               
+    <body class="bg-[#F4F4F4]">
+        
+        {{-- Header --}}
+        <x-header/>
+
+        <div class="flex flex-col h-[50vh] justify-center items-center">
+
+            <h1 class="text-[38px] font-bold">Your order was successful.</h1>
+
+            <div class="mt-9 bg-white flex flex-col w-150 h-60 items-center justify-center rounded-2xl shadow-2xs">
+                <p class="text-[38px] font-extrabold">Your order number :</p>
+                <h1 class="mt-3 text-[60px] font-extrabold">#0069</h1>
+            </div>
+
+            <div class="mt-6">
+                <span class="text-[24px] font-medium">Please get your receipt and present it to the cashier</span>
+            </div>
+        </div>
+    </body>
+</html>
