@@ -51,7 +51,7 @@
                     <input type="text" name="ProductName" class="border p-2 w-60" placeholder="ProductName" required>
                     <input type="text" name="ProductDescription" class="border p-2 w-60" placeholder="ProductDescription" required>
                     <input type="number" name="ProductPrice" step="0.01" class="border p-2 w-60" placeholder="ProductPrice" required>
-                    <input type="text" name="ProductType">
+                    <input type="text" name="productType" class="border p-2 w-60" placeholder="ProductType" required>
                     <input type="number" name="StockQuantity" class="border p-2 w-60" placeholder="StockQuantity" required>
                     <input type="file" name="ProductImage" class="border p-2 w-60" accept="image/*,.svg">
                     <button type="submit" class="bg-black text-white p-2 rounded-md mt-4 hover:bg-gray-800">Add Product</button>

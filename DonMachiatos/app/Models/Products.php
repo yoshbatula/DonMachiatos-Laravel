@@ -17,5 +17,6 @@ class Products extends Model
         'ProductPrice',
         'StockQuantity',
         'ProductImage',
+        'productType',
     ];
 }

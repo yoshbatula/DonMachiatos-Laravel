@@ -25,6 +25,7 @@ class ProductCont extends Controller {
             'ProductPrice' => 'required|numeric',
             'StockQuantity' => 'required|integer',
             'ProductImage' => 'nullable|file|mimes:jpeg,jpg,png,gif,svg|max:10240',
+            'productType' => 'nullable|string|max:255',
         ]);
 
         try {
