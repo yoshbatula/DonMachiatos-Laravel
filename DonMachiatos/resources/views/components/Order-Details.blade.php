@@ -1,4 +1,4 @@
-<div class="mt-2 flex flex-row transform translate-x-[50px]">
+<div class="mt-5 flex flex-row transform translate-x-[50px]">
     <div class="bg-white w-187 h-60 rounded-[40px] shadow-md">
         <div class="flex flex-row justify-between items-center justify-items-center p-5">
             <h1 class="text-[24px] font-medium">YOUR ORDER</h1>
