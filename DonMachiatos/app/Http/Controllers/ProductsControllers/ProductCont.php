@@ -4,11 +4,18 @@ namespace App\Http\Controllers\ProductsControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Carts;
 
 class ProductCont extends Controller {
     public function index() {
         $products = Products::all();
-        return view('TypeOrder/Dine_In', compact('products'));
+        $carts = Carts::all();
+
+        // Calculate total price
+        $total = $carts->sum(function($cart) {
+            return $cart->productPrice * $cart->productQuantity;
+        });
+        return view('TypeOrder/Dine_In', compact('products', 'carts', 'total'));
     }
 
     public function productPage() {

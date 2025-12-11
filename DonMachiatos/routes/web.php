@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsControllers\ProductCont;
+use App\Http\Controllers\CartControllers\CartCont;
 
 Route::get('/', function () {
     return view('Starting-page');
@@ -37,3 +38,5 @@ Route::get('/Payment', function () {
 
 Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.list');
 Route::post('/Products/add', [ProductCont::class, 'addProducts'])->name('products.add');
+
+Route::post('/Cart/add', [CartCont::class, 'AddToCart'])->name('cart.add');

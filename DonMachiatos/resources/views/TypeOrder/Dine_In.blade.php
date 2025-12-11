@@ -21,7 +21,8 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, quantity: 1 }">
+    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, quantity: 1, showSuccess: {{ session('success') ? 'true' : 'false' }} }" 
+          x-init="if(showSuccess) { setTimeout(() => showSuccess = false, 2000) }">
         <div id="main-content" class="min-h-screen bg-[#F4F4F4]">
             {{-- Header --}}
             <x-header />
@@ -30,11 +31,25 @@
                 <h1 class="font-bold text-[37px]">DON MACHOS MENU</h1>
             </div>
 
+            
+            @if(session('success'))
+                <div x-show="showSuccess" 
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     x-transition:leave="transition ease-in duration-300"
+                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                     class="mx-[50px] mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative" role="alert">
+                    <span class="font-medium">{{ session('success') }}</span>
+                </div>
+            @endif
+
             {{-- Menu --}}
             <x-Menu :products="$products" />
 
             {{-- Order Details --}}
-            <x-Order-Details />
+            <x-Order-Details :carts="$carts" />
 
             {{-- Buttons --}}
             <div class="mt-5 flex flex-row gap-6 transform translate-x-[60px]">
@@ -51,7 +66,7 @@
                 </div>
                 <div class="bg-white border border-black flex flex-col w-50 h-20 items-center justify-center rounded-2xl">
                     <p class="font-medium text-[14px]">ORDER TOTAL</p>
-                    <h1 class="font-bold text-[24px]">₱39.00</h1>
+                    <h1 class="font-bold text-[24px]">₱{{ number_format($total, 2) }}</h1>
                 </div>
             </div>
         </div>

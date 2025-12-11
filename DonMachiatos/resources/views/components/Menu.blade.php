@@ -3,9 +3,15 @@
 <div class="flex flex-col gap-2" x-data="{ 
     showModal: false, 
     selectedProduct: null,
+    selectedMood: null,
+    selectedSize: null,
+    selectedSugar: null,
     selectProduct(product) {
         this.selectedProduct = product;
         this.showModal = true;
+        this.selectedMood = null;
+        this.selectedSize = null;
+        this.selectedSugar = null;
     }
 }">
 {{-- Menu Navigation --}}
