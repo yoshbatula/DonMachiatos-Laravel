@@ -4,17 +4,16 @@
      class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs bg-white/5"
      @click.self="showModal = false">
     <div class="bg-[#F4F4F4] rounded-[40px] shadow-lg p-8 w-[500px] h-[600px] overflow-hidden">
-        <div class="flex flex-col">
+        <div class="flex flex-col" x-show="selectedProduct">
             <div class="flex flex-row">
-                <img src={{ Vite::asset('resources/images/DonDarko.svg') }} alt="Coffee Image" class="w-50 transform translate-x-[-30px]">
+                <img :src="selectedProduct ? '/images/products/' + selectedProduct.image : ''" alt="Coffee Image" class="w-50 transform translate-x-[-30px]">
                 <div class="flex flex-col">
-                    <h1 class="text-[24px] font-semibold">DON DARKO</h1>
+                    <h1 class="text-[24px] font-semibold uppercase" x-text="selectedProduct?.name"></h1>
                     <div class="text-[#929292]">
-                        <span>High-quality dark</span>
-                        <span>chocolate, chocolate syrup</span>
+                        <span x-text="selectedProduct?.description"></span>
                     </div>
                     <div class="mt-2">
-                        <h1 class="font-bold text-[36px]">₱69</h1>
+                        <h1 class="font-bold text-[36px]">₱<span x-text="selectedProduct ? selectedProduct.price.toFixed(2) : '0.00'"></span></h1>
                     </div>
                 </div>
             </div>

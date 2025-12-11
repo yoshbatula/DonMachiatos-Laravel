@@ -16,7 +16,6 @@ class ProductCont extends Controller {
         return view('Products', compact('products'));
     }
 
-
     public function addProducts(Request $request) {
 
         $validated = $request->validate([

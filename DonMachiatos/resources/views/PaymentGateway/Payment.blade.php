@@ -35,6 +35,6 @@
                 <span class="text-[24px] font-medium">Please get your receipt and present it to the cashier</span>
             </div>
         </div>
-        {{-- Hi jerlyn --}}
+
     </body>
 </html>
