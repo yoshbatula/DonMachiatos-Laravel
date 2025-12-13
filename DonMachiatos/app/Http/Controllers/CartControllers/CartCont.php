@@ -72,4 +72,12 @@ class CartCont extends Controller {
             return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
         }
     }
+
+    public function checkOut() {
+        if (Carts::count() === 0) {
+            return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to checkout.');
+        }
+
+        return redirect()->route('paymentoptions');
+    }
 }

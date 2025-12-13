@@ -71,8 +71,8 @@
                 <div class="bg-white border border-black w-50 h-20 flex items-center justify-center rounded-2xl hover:bg-black hover:text-white transition-colors duration-300" @click="showCancelModal">
                     <button @click="showCancelModal = true" class="text-[20px] font-bold hover:cursor-pointer">CANCEL</button>
                 </div>
-                <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer"
-                    hx-get="{{ route('paymentoptions') }}" 
+                 <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer"
+                    hx-get="{{ route('cart.checkout') }}" 
                     hx-trigger="click" 
                     hx-target="body" 
                     hx-swap="innerHTML" 
