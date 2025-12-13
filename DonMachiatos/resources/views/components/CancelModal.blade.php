@@ -2,6 +2,7 @@
      x-cloak
      class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs bg-white/5"
      @click.self="showCancelModal = false">
+     {{-- Cancel Modals --}}
     <div class="bg-[#F4F4F4] rounded-[20px] shadow-lg p-8 w-[500px] h-[200px] overflow-hidden">
         <div class="flex flex-col justify-center items-center">
             <h1 class="font-bold text-[24px]">Are you sure you want to Cancel?</h1>
