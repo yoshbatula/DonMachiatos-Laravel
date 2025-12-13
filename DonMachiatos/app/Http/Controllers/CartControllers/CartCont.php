@@ -57,4 +57,19 @@ class CartCont extends Controller {
             return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
         }
     }
+
+    public function deleteAllCartItems() {
+        try {
+            $count = Carts::count();
+            
+            if ($count === 0) {
+                return redirect()->route('dinein')->with('error', 'Cart is already empty!');
+            }
+            
+            Carts::truncate();
+            return redirect()->route('dinein')->with('success', 'All cart items deleted successfully!');
+        } catch(\Exception $e) {
+            return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
+        }
+    }
 }

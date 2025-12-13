@@ -40,3 +40,5 @@ Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.lis
 Route::post('/Products/add', [ProductCont::class, 'addProducts'])->name('products.add');
 
 Route::post('/Cart/add', [CartCont::class, 'AddToCart'])->name('cart.add');
+Route::post('/Cart/delete-all', [CartCont::class, 'deleteAllCartItems'])->name('cart.deleteAll');
+Route::get('/Cart', [CartCont::class, 'index'])->name('cart.index');

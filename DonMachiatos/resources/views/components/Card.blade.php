@@ -39,7 +39,7 @@
                             </div>
                             <div class="mt-2 rounded-[40px] w-13 h-10 flex items-center justify-center transition-colors"
                                  :class="selectedMood === 'Iced' ? 'bg-blue-200' : 'bg-[#D9D9D9]'">
-                                <button type="button" @click="selectedMood = 'Iced'" class="hover:cursor-pointer text-blue-300">COLD</button>
+                                <button type="button" @click="selectedMood = 'Iced'" class="hover:cursor-pointer text-black">COLD</button>
                             </div>
                         </div>
                     </div>

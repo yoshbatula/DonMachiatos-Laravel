@@ -21,7 +21,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, quantity: 1, showSuccess: {{ session('success') ? 'true' : 'false' }} }" 
+    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, showCancelModal: false, quantity: 1, showSuccess: {{ session('success') ? 'true' : 'false' }} }" 
           x-init="if(showSuccess) { setTimeout(() => showSuccess = false, 2000) }">
         <div id="main-content" class="min-h-screen bg-[#F4F4F4]">
             {{-- Header --}}
@@ -45,6 +45,21 @@
                 </div>
             @endif
 
+            @if(session('error'))
+                <div x-data="{ showError: true }" 
+                     x-show="showError" 
+                     x-init="setTimeout(() => showError = false, 2000)"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     x-transition:leave="transition ease-in duration-300"
+                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                     class="mx-[50px] mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
+                    <span class="font-medium">{{ session('error') }}</span>
+                </div>
+            @endif
+
             {{-- Menu --}}
             <x-Menu :products="$products" />
 
@@ -53,8 +68,8 @@
 
             {{-- Buttons --}}
             <div class="mt-5 flex flex-row gap-6 transform translate-x-[60px]">
-                <div class="bg-white border border-black w-50 h-20 flex items-center justify-center rounded-2xl hover:bg-black hover:text-white transition-colors duration-300">
-                    <button class="text-[20px] font-bold hover:cursor-pointer">CANCEL</button>
+                <div class="bg-white border border-black w-50 h-20 flex items-center justify-center rounded-2xl hover:bg-black hover:text-white transition-colors duration-300" @click="showCancelModal">
+                    <button @click="showCancelModal = true" class="text-[20px] font-bold hover:cursor-pointer">CANCEL</button>
                 </div>
                 <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer"
                     hx-get="{{ route('paymentoptions') }}" 
@@ -69,6 +84,9 @@
                     <h1 class="font-bold text-[24px]">₱{{ number_format($total, 2) }}</h1>
                 </div>
             </div>
+
+            {{-- Cancel Modal --}}
+            <x-CancelModal/>
         </div>
     </body>
 </html>
