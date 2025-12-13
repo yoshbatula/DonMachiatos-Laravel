@@ -1,6 +1,6 @@
 <div x-show="showModal === true" 
      x-cloak
-     x-init="$watch('showModal', value => { if(value) quantity = 1 })"
+     x-init="$watch('showModal', value => { if(value) { quantity = 1; currentPrice = selectedProduct?.price || 0; } })"
      class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs bg-white/5"
      @click.self="showModal = false">
     <div class="bg-[#F4F4F4] rounded-[40px] shadow-lg p-8 w-[500px] h-[600px] overflow-hidden">
@@ -13,7 +13,7 @@
                         <span x-text="selectedProduct?.description"></span>
                     </div>
                     <div class="mt-2">
-                        <h1 class="font-bold text-[36px]">₱<span x-text="selectedProduct ? selectedProduct.price.toFixed(2) : '0.00'"></span></h1>
+                        <h1 class="font-bold text-[36px]">₱<span x-text="currentPrice ? currentPrice.toFixed(2) : '0.00'"></span></h1>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 @csrf
                 <input type="hidden" name="productID" :value="selectedProduct?.id">
                 <input type="hidden" name="productName" :value="selectedProduct?.name">
-                <input type="hidden" name="productPrice" :value="selectedProduct?.price">
+                <input type="hidden" name="productPrice" :value="currentPrice || selectedProduct?.price">
                 <input type="hidden" name="productImage" :value="selectedProduct?.image">
                 <input type="hidden" name="productMood" x-model="selectedMood">
                 <input type="hidden" name="productSize" x-model="selectedSize">
@@ -47,19 +47,19 @@
                         <h1 class="text-[24px] font-bold">Size</h1>
                         <div class="flex flex-row gap-4">
                             <div class="mt-2 flex flex-col">
-                                <button type="button" @click="selectedSize = 'Small'" 
+                                <button type="button" @click="selectedSize = 'Small'; currentPrice = 39" 
                                         class="rounded-[40px] w-13 h-10 flex items-center justify-center font-semibold hover:cursor-pointer transition-colors"
                                         :class="selectedSize === 'Small' ? 'bg-black text-white' : 'bg-[#D9D9D9]'">S</button>
                                 <p class="mt-1 font-bold text-[14px] text-center">₱39</p>
                             </div>
                             <div class="mt-2 flex flex-col">
-                                <button type="button" @click="selectedSize = 'Medium'" 
+                                <button type="button" @click="selectedSize = 'Medium'; currentPrice = 69" 
                                         class="rounded-[40px] w-13 h-10 flex items-center justify-center font-semibold hover:cursor-pointer transition-colors"
                                         :class="selectedSize === 'Medium' ? 'bg-black text-white' : 'bg-[#D9D9D9]'">M</button>
                                 <p class="mt-1 font-bold text-[14px] text-center">₱69</p>
                             </div>
                             <div class="mt-2 flex flex-col">
-                                <button type="button" @click="selectedSize = 'Large'" 
+                                <button type="button" @click="selectedSize = 'Large'; currentPrice = 99" 
                                         class="rounded-[40px] w-13 h-10 flex items-center justify-center font-semibold hover:cursor-pointer transition-colors"
                                         :class="selectedSize === 'Large' ? 'bg-black text-white' : 'bg-[#D9D9D9]'">L</button>
                                 <p class="mt-1 font-bold text-[14px] text-center">₱99</p>

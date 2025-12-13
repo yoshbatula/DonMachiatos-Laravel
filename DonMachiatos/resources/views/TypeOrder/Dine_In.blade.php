@@ -21,7 +21,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, showCancelModal: false, quantity: 1, showSuccess: {{ session('success') ? 'true' : 'false' }} }" 
+    <body class="bg-[#F4F4F4]" x-data="{ showModal: false, showCancelModal: false, quantity: 1, currentPrice: 0, showSuccess: {{ session('success') ? 'true' : 'false' }} }" 
           x-init="if(showSuccess) { setTimeout(() => showSuccess = false, 2000) }">
         <div id="main-content" class="min-h-screen bg-[#F4F4F4]">
             {{-- Header --}}
