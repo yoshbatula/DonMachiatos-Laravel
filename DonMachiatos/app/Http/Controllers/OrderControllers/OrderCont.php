@@ -35,6 +35,8 @@ class OrderCont extends Controller {
             $orders->OrderNumber = mt_rand(100000, 999999);
             $orders->save();
 
+            Carts::query()->delete();
+
             return redirect()->route('paymentsuccess')->with('order', $orders);
             
         } catch(\Exception $e) {

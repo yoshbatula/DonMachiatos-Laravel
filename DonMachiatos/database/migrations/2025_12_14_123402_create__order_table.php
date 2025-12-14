@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal('TotalAmount', 8, 2);
             $table->string('PaymentMethod');
             $table->dateTime('OrderDate');
-            $table->foreign('CartID')->references('CartID')->on('_carts')->onDelete('cascade');
+            $table->foreign('CartID')->references('CartID')->on('_carts')->onDelete('set null');
             $table->integer('OrderNumber')->unique();
             $table->timestamps();
         });

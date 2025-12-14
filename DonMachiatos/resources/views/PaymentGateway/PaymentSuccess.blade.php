@@ -1,3 +1,4 @@
+{{-- Removed @props directive, not needed for regular views --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -29,7 +30,9 @@
                 <div class="bg-white mt-9 w-140 h-60 rounded-2xl shadow-2xl flex justify-center items-center">
                     <div>
                         <p class="text-[48px] font-extrabold">Your order number:</p>
-                        <h1 class="text-[80px] font-extrabold text-center">#0069</h1>
+                        <h1 class="text-[80px] font-extrabold text-center">
+                            #{{ session('order') ? session('order')->OrderNumber : 'N/A' }}
+                        </h1>
                     </div>
                 </div>
                 <div class="mt-5">
