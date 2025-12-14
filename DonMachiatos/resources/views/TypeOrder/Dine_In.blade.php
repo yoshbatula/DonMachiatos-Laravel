@@ -87,6 +87,7 @@
 
             {{-- Cancel Modal --}}
             <x-CancelModal/>
+            {{-- Added Modals --}}
         </div>
     </body>
 </html>
