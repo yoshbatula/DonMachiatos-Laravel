@@ -35,10 +35,7 @@ class OrderCont extends Controller {
             $orders->OrderNumber = mt_rand(100000, 999999);
             $orders->save();
 
-            // Clear the kiosk cart
-            Carts::truncate();
-
-            return redirect()->route('paymentsuccess')->with('success', 'Order placed successfully!');
+            return redirect()->route('paymentsuccess')->with('order', $orders);
             
         } catch(\Exception $e) {
             return back()->with('error', 'Error: ' . $e->getMessage())->withInput();

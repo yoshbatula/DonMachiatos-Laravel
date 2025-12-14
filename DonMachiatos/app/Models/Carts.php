@@ -9,10 +9,9 @@ class Carts extends Model
 
     protected $table = '_carts';
     protected $primaryKey = 'CartID';
-    public $incrementing = true; // If CartID is auto-incrementing
+    public $incrementing = true; 
     
-    // Add this if your table doesn't have timestamps
-    public $timestamps = true; // Set to false if you don't have created_at/updated_at columns
+    public $timestamps = true; 
 
     protected $fillable = [
         'productID',
@@ -25,7 +24,6 @@ class Carts extends Model
         'productSugar',
     ];
     
-    // Cast to proper types
     protected $casts = [
         'productPrice' => 'decimal:2',
         'productQuantity' => 'integer',
