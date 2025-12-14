@@ -45,4 +45,4 @@ Route::post('/Cart/delete-all', [CartCont::class, 'deleteAllCartItems'])->name('
 Route::get('/Cart', [CartCont::class, 'index'])->name('cart.index');
 Route::get('/Checkout', [CartCont::class, 'checkOut'])->name('cart.checkout');
 
-Route::get('/PaymentSucess', [OrderCont::class, 'PaymentOption'])->name('payment.success');
+Route::get('/PaymentOptions', [OrderCont::class, 'PaymentOption'])->name('payment.success');

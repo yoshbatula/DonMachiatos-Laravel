@@ -29,7 +29,7 @@
 
                 <div class="flex flex-row mt-9 gap-5">
                     <div class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer"
-                    hx-get="{{ route('qrscanner') }}" 
+                    hx-get="{{ route('payment.success') }}" 
                     hx-trigger="click" 
                     hx-target="body" 
                     hx-swap="innerHTML" 
