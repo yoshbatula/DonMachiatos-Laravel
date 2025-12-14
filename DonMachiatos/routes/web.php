@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsControllers\ProductCont;
 use App\Http\Controllers\CartControllers\CartCont;
+use App\Http\Controllers\OrderControllers\OrderCont;
 
 Route::get('/', function () {
     return view('Starting-page');
@@ -43,3 +44,5 @@ Route::post('/Cart/add', [CartCont::class, 'AddToCart'])->name('cart.add');
 Route::post('/Cart/delete-all', [CartCont::class, 'deleteAllCartItems'])->name('cart.deleteAll');
 Route::get('/Cart', [CartCont::class, 'index'])->name('cart.index');
 Route::get('/Checkout', [CartCont::class, 'checkOut'])->name('cart.checkout');
+
+Route::get('/PaymentSucess', [OrderCont::class, 'PaymentOption'])->name('payment.success');
