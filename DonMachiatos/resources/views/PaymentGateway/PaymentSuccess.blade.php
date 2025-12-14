@@ -1,10 +1,11 @@
-{{-- Removed @props directive, not needed for regular views --}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Don Machos</title>
+        <meta http-equiv="refresh" content="5;url={{ route('starting.page') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -37,9 +38,6 @@
                 </div>
                 <div class="mt-5">
                     <p class="text-[28px] font-medium">Please get your receipt and present it to the cashier</p>
-                </div>
-                <div class="mt-9 bg-black hover:bg-white hover:text-black transition-colors duration-300 text-white w-70 h-20 flex items-center justify-center rounded-2xl shadow-2xl">
-                    <span class="text-[30px] font-bold hover:cursor-pointer">BackToMenu</span>
                 </div>
             </div>
     </body>

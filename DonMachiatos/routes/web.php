@@ -8,7 +8,7 @@ use App\Http\Controllers\OrderControllers\OrderCont;
 
 Route::get('/', function () {
     return view('Starting-page');
-});
+})->name('starting.page');
 
 Route::get('/order-type', function () {
     return view('TypeOrder/OrderType');
