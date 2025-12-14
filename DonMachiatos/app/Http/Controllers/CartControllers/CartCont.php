@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CartControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Carts;
+use App\Models\Order;
 class CartCont extends Controller {
 
     public function index() {
@@ -77,7 +78,15 @@ class CartCont extends Controller {
         if (Carts::count() === 0) {
             return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to checkout.');
         }
-
+        $orders = new Order();
+        $orders->CartID = Carts::pluck('CartID')->first();
+        $orders->TotalAmount = Carts::sum(function($cart) { 
+            return $cart->productPrice * $cart->productQuantity; 
+        });
+        $orders->PaymentMethod = 'CASHIER';
+        $orders->OrderDate = now();
+        $orders->OrderNumber = mt_rand(100000, 999999);
+        $orders->save();
         return redirect()->route('paymentoptions');
     }
 }

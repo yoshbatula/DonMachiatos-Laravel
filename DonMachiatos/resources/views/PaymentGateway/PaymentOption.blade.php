@@ -34,9 +34,6 @@
                     hx-target="body" 
                     hx-swap="innerHTML" 
                     hx-push-url="true">
-                        <img src={{ Vite::asset('resources/images/InstaPay.svg') }} alt="Cash Icon">
-                    </div>
-                    <div class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer">
                         <h1 class="text-[40px] font-bold">Cashier</h1>
                     </div>
                 </div>
