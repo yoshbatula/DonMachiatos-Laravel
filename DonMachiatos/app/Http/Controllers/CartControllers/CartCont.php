@@ -59,7 +59,6 @@ class CartCont extends Controller {
         }
     }
 
-    // Method to update cart item quantity
     public function updateCartItem(Request $request, $id) {
         $validated = $request->validate([
             'productQuantity' => 'required|integer|min:1',
@@ -76,7 +75,6 @@ class CartCont extends Controller {
         }
     }
 
-    // Method to delete a single cart item
     public function deleteCartItem($id) {
         try {
             $cartItem = Carts::findOrFail($id);

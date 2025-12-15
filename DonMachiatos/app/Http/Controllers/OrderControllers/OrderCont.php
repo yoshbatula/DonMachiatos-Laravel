@@ -24,11 +24,13 @@ use App\Models\Payment;
                 });
                 
                 $orders = new Order();
+                $today = now()->format('Y-m-d');
+                $orderCount = Order::whereDate('created_at', $today)->count();
                 $orders->CartID = $cartItems->first()->CartID;
                 $orders->TotalAmount = $totalAmount;
                 $orders->PaymentMethod = 'CASHIER';
                 $orders->OrderDate = now();
-                $orders->OrderNumber = mt_rand(100000, 999999);
+                $orders->OrderNumber = str_pad($orderCount + 1, 5, '0', STR_PAD_LEFT);
                 $orders->save();
 
                 Carts::query()->delete();
