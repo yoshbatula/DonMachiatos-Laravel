@@ -59,6 +59,35 @@ class CartCont extends Controller {
         }
     }
 
+    // Method to update cart item quantity
+    public function updateCartItem(Request $request, $id) {
+        $validated = $request->validate([
+            'productQuantity' => 'required|integer|min:1',
+        ]);
+
+        try {
+            $cartItem = Carts::findOrFail($id);
+            $cartItem->productQuantity = $validated['productQuantity'];
+            $cartItem->save();
+            
+            return redirect()->route('cart.index')->with('success', 'Cart item updated successfully!');
+        } catch(\Exception $e) {
+            return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
+        }
+    }
+
+    // Method to delete a single cart item
+    public function deleteCartItem($id) {
+        try {
+            $cartItem = Carts::findOrFail($id);
+            $cartItem->delete();
+            
+            return redirect()->route('cart.index')->with('success', 'Item removed from cart!');
+        } catch(\Exception $e) {
+            return back()->with('error', 'Error: ' . $e->getMessage());
+        }
+    }
+
     public function deleteAllCartItems() {
         try {
             $count = Carts::count();
@@ -75,10 +104,10 @@ class CartCont extends Controller {
     }
 
     public function checkOut() {
-    if (Carts::count() === 0) {
-        return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to checkout.');
-    }
-    
-    return redirect()->route('paymentoptions');
+        if (Carts::count() === 0) {
+            return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to checkout.');
+        }
+        
+        return redirect()->route('paymentoptions');
     }
 }
