@@ -20,6 +20,10 @@ Route::get('/Takeaway', function () {
     return view('TypeOrder/TakeOut');
 })->name('takeout');
 
+Route::get('/Selection', function () {
+    return view('Selection');
+})->name('selection');
+
 Route::get('/PaymentOptions', function () {
     return view('PaymentGateway/PaymentOption');
 })->name('paymentoptions');
