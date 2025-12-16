@@ -61,7 +61,7 @@
                             <div class="mt-2 flex flex-col">
                                 <button type="button" @click="selectedSize = 'Large'; currentPrice = 99" 
                                         class="rounded-[40px] w-13 h-10 flex items-center justify-center font-semibold hover:cursor-pointer transition-colors"
-                                        :class="selectedSize === 'Large' ? 'bg-black text-white' : 'bg-[#D9D9D9]'">L</button>
+                                        :class="selectedSize === 'Large' ? 'bg-black text-white' : 'bg-[#D  9D9D9]'">L</button>
                                 <p class="mt-1 font-bold text-[14px] text-center">₱99</p>
                             </div>
                         </div>

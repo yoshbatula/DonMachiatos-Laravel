@@ -41,6 +41,11 @@ Route::get('/Payment', function () {
     return view('PaymentGateway/Payment');
 })->name('payment');
 
+
+Route::get('/ViewCart', function () {
+    return view('ViewCart');
+})->name('viewcart');
+
 Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.list');
 Route::post('/Products/add', [ProductCont::class, 'addProducts'])->name('products.add');
 
