@@ -71,14 +71,9 @@
                 <div class="bg-white border border-black w-50 h-20 flex items-center justify-center rounded-2xl hover:bg-black hover:text-white transition-colors duration-300" @click="showCancelModal">
                     <button @click="showCancelModal = true" class="text-[20px] font-bold hover:cursor-pointer">CANCEL</button>
                 </div>
-                 <div class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer"
-                    hx-get="{{ route('cart.checkout') }}" 
-                    hx-trigger="click" 
-                    hx-target="body" 
-                    hx-swap="innerHTML" 
-                    hx-push-url="true">
-                    <span class="font-bold text-[20px]">PROCEED TO CHECKOUT</span>
-                </div>
+                    <a href="{{ route('cart.checkout') }}" class="bg-black text-white w-70 h-20 flex items-center justify-center rounded-2xl hover:cursor-pointer">
+                        <span class="font-bold text-[20px]">PROCEED</span>
+                    </a>
                 <div class="bg-white border border-black flex flex-col w-50 h-20 items-center justify-center rounded-2xl">
                     <p class="font-medium text-[14px]">ORDER TOTAL</p>
                     <h1 class="font-bold text-[24px]">₱{{ number_format($total, 2) }}</h1>

@@ -21,6 +21,8 @@
         @endif
     </head>                               
     <body>
+        <x-Header/>
+
         <x-CartView-Items :carts="$carts"/>
     </body>
 </html>

@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -5,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsControllers\ProductCont;
 use App\Http\Controllers\CartControllers\CartCont;
 use App\Http\Controllers\OrderControllers\OrderCont;
+use App\Models\Carts;
 
 Route::get('/', function () {
     return view('Starting-page');
@@ -43,8 +45,12 @@ Route::get('/Payment', function () {
 
 
 Route::get('/ViewCart', function () {
-    return view('ViewCart');
+    $carts = Carts::all();
+    return view('ViewCart', compact('carts'));
 })->name('viewcart');
+
+Route::delete('/Cart/delete/{id}', [CartCont::class, 'deleteCartItem'])->name('cart.delete');
+Route::put('/Cart/update/{id}', [CartCont::class, 'updateCartItem'])->name('cart.update');
 
 Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.list');
 Route::post('/Products/add', [ProductCont::class, 'addProducts'])->name('products.add');
