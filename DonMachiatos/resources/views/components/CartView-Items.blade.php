@@ -43,24 +43,24 @@
                         type="button"
                         class="bg-gray-200 text-black px-3 py-1 rounded hover:cursor-pointer"
                         @click="
-                        showCardUpdateModal = true;
-                        selectedProduct = {
-                            id: {{ $cart->productID }},
-                            name: {{ Js::from($cart->productName) }},
-                            price: {{ $cart->productPrice }},
-                            image: {{ Js::from($cart->productImage) }},
-                            description: {{ Js::from($cart->product->ProductDescription ?? 'No description available') }},
-                        };
-                        selectedMood = {{ Js::from($cart->productMood) }};
-                        selectedSize = {{ Js::from($cart->productSize) }};
-                        selectedSugar = {{ Js::from($cart->productSugar) }};
-                        quantity = {{ $cart->productQuantity }};
-                        currentPrice = {{ $cart->productPrice }};
-                    "
+                            showCardUpdateModal = true;
+                            selectedProduct = {
+                                id: {{ $cart->productID }},
+                                cartID: {{ $cart->CartID }},  // ADD THIS LINE
+                                name: {{ Js::from($cart->productName) }},
+                                price: {{ $cart->productPrice }},
+                                image: {{ Js::from($cart->productImage) }},
+                                description: {{ Js::from($cart->product->ProductDescription ?? 'No description available') }},
+                            };
+                            selectedMood = {{ Js::from($cart->productMood) }};
+                            selectedSize = {{ Js::from($cart->productSize) }};
+                            selectedSugar = {{ Js::from($cart->productSugar) }};
+                            quantity = {{ $cart->productQuantity }};
+                            currentPrice = {{ $cart->productPrice }};
+                        "
                     >
                         Edit
-                    </button>
-                    
+                    </button> 
                     <form action="{{ route('cart.delete', $cart->CartID) }}" method="POST">
                         @csrf
                         @method('DELETE')

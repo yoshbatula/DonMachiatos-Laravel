@@ -18,18 +18,20 @@
                 </div>
             </div>
 
-            <form action="{{ route('cart.add') }}" method="POST">
+            <!-- SINGLE FORM - NOT NESTED -->
+            <form :action="'/Cart/update/' + (selectedProduct?.cartID ?? '')" method="POST">
                 @csrf
+                @method('PUT')
                 <input type="hidden" name="productID" :value="selectedProduct?.id">
                 <input type="hidden" name="productName" :value="selectedProduct?.name">
-                <input type="hidden" name="productPrice" :value="currentPrice || selectedProduct?.price">
+                <input type="hidden" name="productPrice" :value="currentPrice">
                 <input type="hidden" name="productImage" :value="selectedProduct?.image">
                 <input type="hidden" name="productMood" x-model="selectedMood">
                 <input type="hidden" name="productSize" x-model="selectedSize">
                 <input type="hidden" name="productSugar" x-model="selectedSugar">
                 <input type="hidden" name="productQuantity" x-model="quantity">
                 
-                    <div class="flex flex-row justify-between items-start">
+                <div class="flex flex-row justify-between items-start">
                     <div class="mt-4 flex flex-col">
                         <h1 class="text-[24px] font-bold">Mood</h1> 
                         <div class="flex flex-row gap-2">
@@ -95,14 +97,8 @@
                     </div>
                 </div>
                 <div class="mt-5 p-4 flex flex-row gap-3 transform translate-x-[25px]">
-                    <div class="bg-white border border-black flex items-center justify-center rounded-2xl w-40 h-16">
-                        <button type="button" @click="showCardUpdateModal = false" class="font-semibold text-[16px] hover:cursor-pointer">Cancel</button>
-                    </div>
-                    <form :action="'/cart/update/' + (selectedProduct?.id ?? '')" method="POST" class="hover:cursor-pointer">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit" class="bg-black text-white font-semibold text-[16px] rounded-2xl w-40 h-16 hover:bg-gray-800 hover:cursor-pointer transition">Update Cart</button>
-                    </form>
+                    <button type="button" @click="showCardUpdateModal = false" class="bg-white border border-black font-semibold text-[16px] rounded-2xl w-40 h-16 hover:cursor-pointer">Cancel</button>
+                    <button type="submit" class="bg-black text-white font-semibold text-[16px] rounded-2xl w-40 h-16 hover:bg-gray-800 hover:cursor-pointer transition">Update Cart</button>
                 </div>
             </form>
         </div>

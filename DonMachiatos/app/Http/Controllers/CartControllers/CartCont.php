@@ -59,20 +59,28 @@ class CartCont extends Controller {
     }
 
     public function updateCartItem(Request $request, $id) {
-        $validated = $request->validate([
-            'productQuantity' => 'required|integer|min:1',
-        ]);
+    $validated = $request->validate([
+        'productQuantity' => 'required|integer|min:1',
+        'productMood' => 'nullable|string|max:255',
+        'productSize' => 'nullable|string|max:255',
+        'productSugar' => 'nullable|string|max:255',
+        'productPrice' => 'required|numeric',
+    ]);
 
-        try {
-            $cartItem = Carts::findOrFail($id);
-            $cartItem->productQuantity = $validated['productQuantity'];
-            $cartItem->save();
-            
-            return redirect()->route('viewcart')->with('success', 'Cart item updated successfully!');
-        } catch(\Exception $e) {
-            return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
-        }
+    try {
+        $cartItem = Carts::findOrFail($id);
+        $cartItem->productQuantity = $validated['productQuantity'];
+        $cartItem->productMood = $validated['productMood'];
+        $cartItem->productSize = $validated['productSize'];
+        $cartItem->productSugar = $validated['productSugar'];
+        $cartItem->productPrice = $validated['productPrice'];
+        $cartItem->save();
+        
+        return redirect()->route('viewcart')->with('success', 'Cart item updated successfully!');
+    } catch(\Exception $e) {
+        return back()->with('error', 'Error: ' . $e->getMessage());
     }
+}
 
     public function deleteCartItem($id) {
         try {
