@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Don Machos</title>
-        <meta http-equiv="refresh" content="5;url={{ route('starting.page') }}">
+        {{-- <meta http-equiv="refresh" content="5;url={{ route('starting.page') }}"> --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -31,9 +31,9 @@
                 <div class="bg-white mt-9 w-140 h-60 rounded-2xl shadow-2xl flex justify-center items-center">
                     <div>
                         <p class="text-[48px] font-extrabold">Your order number:</p>
-                        <h1 class="text-[80px] font-extrabold text-center">
-                            #{{ session('order') ? session('order')->OrderNumber : 'N/A' }}
-                        </h1>
+                            <h1 class="text-[80px] font-extrabold text-center">
+                                #{{ session('order') ? session('order')->OrderNumber : 'N/A' }}
+                            </h1>
                     </div>
                 </div>
                 <div class="mt-5">

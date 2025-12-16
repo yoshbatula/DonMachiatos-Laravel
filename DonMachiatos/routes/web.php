@@ -1,4 +1,5 @@
 
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,10 @@ use App\Models\Carts;
 Route::get('/', function () {
     return view('Starting-page');
 })->name('starting.page');
+
+Route::get('/OrderOption', function () {
+    return redirect()->route('paymentoptions');
+});
 
 Route::get('/order-type', function () {
     return view('TypeOrder/OrderType');
@@ -34,14 +39,17 @@ Route::get('/QrScanner', function () {
     return view('PaymentGateway/QrScanner');
 })->name('qrscanner');
 
-Route::get('/PaymentSucess', function () {
-    return view('PaymentGateway/PaymentSuccess');
-})->name('paymentsuccess');
 
 
 Route::get('/Payment', function () {
     return view('PaymentGateway/Payment');
 })->name('payment');
+
+
+Route::get('/PaymentSucess', function () {
+    return view('PaymentGateway/PaymentSuccess');
+})->name('paymentsuccess');
+
 
 
 Route::get('/ViewCart', function () {
@@ -62,4 +70,4 @@ Route::post('/Cart/delete-all', [CartCont::class, 'deleteAllCartItems'])->name('
 Route::get('/Cart', [CartCont::class, 'index'])->name('cart.index');
 Route::get('/Checkout', [CartCont::class, 'checkOut'])->name('cart.checkout');
 
-Route::get('/PaymentSuccess', [OrderCont::class, 'PaymentOption'])->name('payment.success');
+Route::post('/OrderOption', [OrderCont::class, 'PaymentOption'])->name('payment.success');

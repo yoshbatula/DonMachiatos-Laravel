@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Don Machos</title>
-        <meta name="htmx-config" content='{"defaultSwapStyle":"outerHTML"}'> 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -28,9 +27,14 @@
                     <h1 class="text-[40px] font-bold">SELECT YOUR PAYMENT OPTION</h1>
                 </div>
 
-                <a href="{{ route('payment.success') }}" class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer hover:bg-gray-50 transition">
-                    <h1 class="text-[40px] font-bold">Cashier</h1>
-                </a>
+                <div class="flex flex-row mt-9 gap-5">
+                    <form method="POST" action="{{ route('payment.success') }}">
+                        @csrf
+                        <button type="submit" class="bg-white w-70 h-70 rounded-2xl shadow-md flex flex-col justify-center items-center hover:cursor-pointer focus:outline-none">
+                            <h1 class="text-[40px] font-bold">Cashier</h1>
+                        </button>
+                    </form>
+                </div>
             </div>
     </body>
 </html>
