@@ -15,10 +15,10 @@
             <div class="divide-y divide-gray-200 px-4 py-2">
                 @foreach ($carts as $cart)
                     <div class="flex flex-row items-center py-4 gap-4 border border-gray-200 rounded-2xl shadow-sm bg-white mb-3">
-                        <div class="bg-[#F4F1EE] w-24 h-24 rounded-2xl flex items-center justify-center">
+                        <div class="bg-[#F4F1EE] w-24 h-24 rounded-2xl flex items-center justify-center transform translate-x-3">
                             <img class="w-20 h-20 object-contain" src="{{ asset('images/products/' . $cart->productImage) }}" alt="Order Image">
                         </div>
-                        <div class="flex flex-col flex-1">
+                        <div class="flex flex-col flex-1 transform -translate-x-[-5px]">
                             <h2 class="font-semibold text-lg">{{ $cart->productName }}</h2>
                             <div class="flex flex-row text-sm text-[#90571C] gap-2">
                                 <span>{{ $cart->productSize }}</span>
@@ -29,7 +29,7 @@
                             </div>
                             <div class="mt-2 text-[15px] font-semibold">x{{ $cart->productQuantity }}</div>
                         </div>
-                        <div class="flex flex-row items-center gap-4">
+                        <div class="flex flex-row items-center gap-4 transform translate-x-[-5px]">
                             <div class="font-bold text-lg">₱{{ $cart->productPrice }}</div>
                             <form action="{{ route('cart.update', $cart->CartID) }}" method="POST" class="flex flex-row items-center gap-2">
                                 @csrf
