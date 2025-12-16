@@ -20,9 +20,18 @@
             </style>
         @endif
     </head>                               
-    <body>
+    <body x-data="{ 
+        showModal: false, 
+        selectedProduct: null, 
+        selectedMood: null, 
+        selectedSize: null, 
+        selectedSugar: null, 
+        quantity: 1, 
+        currentPrice: 0 
+    }">
         <x-Header/>
 
         <x-CartView-Items :carts="$carts"/>
+        <x-Card />
     </body>
 </html>
