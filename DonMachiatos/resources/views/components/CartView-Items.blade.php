@@ -61,11 +61,9 @@
                     >
                         Edit
                     </button> 
-                    <form action="{{ route('cart.delete', $cart->CartID) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="bg-black text-white px-3 py-1 rounded-[10px] hover:cursor-pointer">Delete</button>
-                    </form>
+                    <button type="button" class="bg-black text-white px-3 py-1 rounded-[10px] hover:cursor-pointer"
+                        @click="showDeleteModal = true; selectedCartID = {{ $cart->CartID }}"
+                    >Delete</button>
                 </div>
             </div>
             @endforeach

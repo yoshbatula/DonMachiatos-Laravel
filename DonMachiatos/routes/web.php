@@ -51,7 +51,7 @@ Route::get('/ViewCart', function () {
 
 Route::post('CartItem/delete-all', [CartCont::class, 'AllDeletedCarts'])->name('allcart.delete');
 
-Route::delete('/Cart/delete/{id}', [CartCont::class, 'deleteCartItem'])->name('cart.delete');
+Route::delete('/cart/delete/{id}', [CartCont::class, 'deleteCartItem'])->name('cart.delete');
 Route::put('/Cart/update/{id}', [CartCont::class, 'updateCartItem'])->name('cart.update');
 
 Route::get('/Products', [ProductCont::class, 'productPage'])->name('products.list');

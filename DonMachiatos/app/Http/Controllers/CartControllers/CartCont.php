@@ -87,7 +87,7 @@ class CartCont extends Controller {
             $cartItem = Carts::findOrFail($id);
             $cartItem->delete();
             
-            return redirect()->route('cart.index')->with('success', 'Item removed from cart!');
+            return redirect()->route('viewcart')->with('success', 'Item removed from cart!');
         } catch(\Exception $e) {
             return back()->with('error', 'Error: ' . $e->getMessage());
         }

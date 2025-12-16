@@ -27,6 +27,8 @@
                 showModal: false, 
                 showCartCancelModal: false,
                 showCardUpdateModal: false,
+                showDeleteModal: false,  
+                selectedCartID: null, 
                 showSuccess: {{ session('success') ? 'true' : 'false' }},
                 selectedProduct: null, 
                 selectedMood: null, 
@@ -41,6 +43,7 @@
             <x-CartCancelModal />
             <x-Card />
             <x-CardModalUpdate />
+            <x-DeleteModal />
             
         </div>
     </body>
