@@ -19,4 +19,10 @@ class Products extends Model
         'ProductImage',
         'productType',
     ];
+
+    // Add this relationship
+    public function carts()
+    {
+        return $this->hasMany(Carts::class, 'productID', 'productID');
+    }
 }

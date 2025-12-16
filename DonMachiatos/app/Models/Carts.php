@@ -28,4 +28,10 @@ class Carts extends Model
         'productPrice' => 'decimal:2',
         'productQuantity' => 'integer',
     ];
+
+    // Add this relationship
+    public function product()
+    {
+        return $this->belongsTo(Products::class, 'productID', 'productID');
+    }
 }

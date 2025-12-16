@@ -1,16 +1,23 @@
 @props(['carts' => []])
 <div class="mt-5 flex flex-col items-center">
+    @if(session('success'))
+            <div x-show="showSuccess" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform -translate-y-2"
+                 x-transition:enter-end="opacity-100 transform translate-y-0"
+                 x-transition:leave="transition ease-in duration-300"
+                 x-transition:leave-start="opacity-100 transform translate-y-0"
+                 x-transition:leave-end="opacity-0 transform -translate-y-2"
+                 class="mx-[50px] mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative" role="alert">
+                 <span class="font-medium">{{ session('success') }}</span>
+            </div>
+        @endif
     <div class="bg-white w-full max-w-2xl rounded-[40px] shadow-md p-6">
         <div class="flex flex-row items-center justify-between mb-4">
             <h1 class="text-[24px] font-medium">Your Cart</h1>
             <div class="flex flex-row gap-2">
                 <a href="{{ route('dinein') }}" class="bg-gray-200 text-black rounded-[10px] px-6 py-2 text-md font-medium hover:bg-gray-300 transition">Back</a>
-                <button class="bg-black text-white text-md font-medium rounded-[10px] px-6 py-2"
-                    hx-get="{{ route('cart.deleteAll') }}"
-                    hx-trigger="click"
-                    hx-target="this"
-                    hx-swap="outerHTML"
-                    hx-push-url="true"
+                <button class="bg-black text-white text-md font-medium rounded-[10px] px-6 py-2 hover:cursor-pointer hover:bg-gray-800 transition" @click="showCartCancelModal = true"
                 >Clear</button>
             </div>
         </div>
@@ -36,23 +43,24 @@
                         type="button"
                         class="bg-gray-200 text-black px-3 py-1 rounded hover:cursor-pointer"
                         @click="
-                            showModal = true;
-                            selectedProduct = {
-                                id: {{ $cart->productID }},
-                                name: '{{ $cart->productName }}',
-                                price: {{ $cart->productPrice }},
-                                image: '{{ $cart->productImage }}',
-                                description: '', // Add if you have it
-                            };
-                            selectedMood = '{{ $cart->productMood }}';
-                            selectedSize = '{{ $cart->productSize }}';
-                            selectedSugar = '{{ $cart->productSugar }}';
-                            quantity = {{ $cart->productQuantity }};
-                            currentPrice = {{ $cart->productPrice }};
-                        "
+                        showCardUpdateModal = true;
+                        selectedProduct = {
+                            id: {{ $cart->productID }},
+                            name: {{ Js::from($cart->productName) }},
+                            price: {{ $cart->productPrice }},
+                            image: {{ Js::from($cart->productImage) }},
+                            description: {{ Js::from($cart->product->ProductDescription ?? 'No description available') }},
+                        };
+                        selectedMood = {{ Js::from($cart->productMood) }};
+                        selectedSize = {{ Js::from($cart->productSize) }};
+                        selectedSugar = {{ Js::from($cart->productSugar) }};
+                        quantity = {{ $cart->productQuantity }};
+                        currentPrice = {{ $cart->productPrice }};
+                    "
                     >
                         Edit
                     </button>
+                    
                     <form action="{{ route('cart.delete', $cart->CartID) }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -73,5 +81,8 @@
                 <button class="bg-gray-400 text-white rounded-[10px] px-8 py-3 text-lg font-semibold cursor-not-allowed" disabled title="Add items to cart to proceed">Proceed to Checkout</button>
             @endif
         </div>
+
+        <x-CartCancelModal />
+        <x-CardModalUpdate
     </div>
 </div>

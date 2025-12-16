@@ -20,18 +20,28 @@
             </style>
         @endif
     </head>                               
-    <body x-data="{ 
-        showModal: false, 
-        selectedProduct: null, 
-        selectedMood: null, 
-        selectedSize: null, 
-        selectedSugar: null, 
-        quantity: 1, 
-        currentPrice: 0 
-    }">
+    <body>
         <x-Header/>
-
-        <x-CartView-Items :carts="$carts"/>
-        <x-Card />
+        <div 
+            x-data="{ 
+                showModal: false, 
+                showCartCancelModal: false,
+                showCardUpdateModal: false,
+                showSuccess: {{ session('success') ? 'true' : 'false' }},
+                selectedProduct: null, 
+                selectedMood: null, 
+                selectedSize: null, 
+                selectedSugar: null, 
+                quantity: 1, 
+                currentPrice: 0 
+            }"
+            x-init="if(showSuccess){ setTimeout(() => showSuccess = false, 2000) }"
+        >
+            <x-CartView-Items :carts="$carts"/>
+            <x-CartCancelModal />
+            <x-Card />
+            <x-CardModalUpdate />
+            
+        </div>
     </body>
 </html>

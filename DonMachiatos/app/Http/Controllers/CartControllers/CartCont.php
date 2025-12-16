@@ -8,10 +8,9 @@ use App\Models\Order;
 class CartCont extends Controller {
 
     public function index() {
-        $carts = Carts::all();
-        return view('Cart', compact('carts'));
+    $carts = Carts::with('product')->get(); 
+    return view('Cart', compact('carts'));
     }
-
 
 
     // Method to add a prodcut to the cart
@@ -69,7 +68,7 @@ class CartCont extends Controller {
             $cartItem->productQuantity = $validated['productQuantity'];
             $cartItem->save();
             
-            return redirect()->route('cart.index')->with('success', 'Cart item updated successfully!');
+            return redirect()->route('viewcart')->with('success', 'Cart item updated successfully!');
         } catch(\Exception $e) {
             return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
         }
@@ -97,6 +96,21 @@ class CartCont extends Controller {
             Carts::truncate();
             return redirect()->route('dinein')->with('success', 'All cart items deleted successfully!');
         } catch(\Exception $e) {
+            return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
+        }
+    }
+
+    public function AllDeletedCarts() {
+        try {
+            $count = Carts::count();
+
+            if ($count === 0) {
+                return redirect()->route('viewcart')->with('error', 'Cart is already empty!');
+            }
+
+            Carts::truncate();
+            return redirect()->route('viewcart')->with('success', 'All cart items deleted successfully!');
+        }catch(\Exception $e) {
             return back()->with('error', 'Error: ' . $e->getMessage())->withInput();
         }
     }

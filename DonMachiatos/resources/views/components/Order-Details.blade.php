@@ -22,7 +22,7 @@
                         <span>{{$cart->productSugar}}</span>
                     </div>
                     <div class="mt-2 flex flex-row justify-between">
-                        <p class="font-semibold text-[20px]">{{$cart->productQuantity}}</p>
+                        <p class="font-semibold text-[20px]">x{{$cart->productQuantity}}</p>
                         <p class="font-bold text-[16px]">TOTAL: ₱{{$cart->productPrice}}</p>
                     </div>
                 </div>
