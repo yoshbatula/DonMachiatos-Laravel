@@ -103,7 +103,7 @@ class CartCont extends Controller {
 
     public function checkOut() {
         if (Carts::count() === 0) {
-            return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to checkout.');
+            return redirect()->route('dinein')->with('error', 'Your cart is empty. Please add items before proceeding to check your carts.');
         }
         
         return redirect()->route('paymentoptions');
