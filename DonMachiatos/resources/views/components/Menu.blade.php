@@ -78,9 +78,7 @@
                 <img class="w-6" src={{ Vite::asset('resources/images/ArrowDown.svg') }} alt="Scroll Indicator">
             </div>
         </div>
-    {{-- End flex-row --}}
     </div>
 
-    {{-- Modal --}}
     <x-Card />
 </div>
