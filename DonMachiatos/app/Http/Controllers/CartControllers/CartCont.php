@@ -82,6 +82,8 @@ class CartCont extends Controller {
     }
 }
 
+// initial commit for today
+
     public function deleteCartItem($id) {
         try {
             $cartItem = Carts::findOrFail($id);
