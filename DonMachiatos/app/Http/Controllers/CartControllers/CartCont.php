@@ -82,7 +82,7 @@ class CartCont extends Controller {
     }
 }
 
-// initial commit for today
+// initial
 
     public function deleteCartItem($id) {
         try {
