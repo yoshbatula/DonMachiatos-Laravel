@@ -82,7 +82,6 @@ class CartCont extends Controller {
     }
 }
 
-// initial
 
     public function deleteCartItem($id) {
         try {

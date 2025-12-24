@@ -18,7 +18,6 @@
                 </div>
             </div>
 
-            <!-- SINGLE FORM - NOT NESTED -->
             <form :action="'/Cart/update/' + (selectedProduct?.cartID ?? '')" method="POST">
                 @csrf
                 @method('PUT')
