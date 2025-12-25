@@ -28,6 +28,7 @@
                 </div>
             </div>
             @endforeach
+            {{-- just for initial commits --}}
         </div>
         <div class="w-full border-t border-gray-300"></div>
         <div class="flex flex-row justify-center mt-2">
